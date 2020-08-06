@@ -1,0 +1,16 @@
+
+//add this on functions.php
+
+if ( ! defined( 'ABSPATH') ) exit;
+
+add_action( 'admin_head', 'dokan_dashboard_hide_tab' );
+
+function dokan_dashboard_hide_tab() {
+	if ( ! is_admin() ) return;
+	?>
+	<style type="text/css">
+	.dokan-dashboard .postbox:nth-child(2) {
+    	display: none;
+	}
+	</style>
+}
